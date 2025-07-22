@@ -55,7 +55,7 @@ describe ('Converter functional', () => {
   it('shows rate 1 and same value for identical currencies', async () => {
     renderWithRedux(<App />);
     await screen.findAllByText('USD');
-    fireEvent.click(screen.getAllByText('CAD')[1]);
+    fireEvent.click(screen.getAllByText('USD')[1]);
     const [leftInput, rightInput] = screen.getAllByRole('spinbutton');
     expect(Number((rightInput as HTMLInputElement).value)).toBeCloseTo(
       Number((leftInput as HTMLInputElement).value),
